@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloqueia rastreamento de rotas internas desnecessárias
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://www.jvbsystems.com.br/sitemap.xml
