@@ -18,39 +18,40 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry, i) => {
           if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add("visible"), i * 80);
+            const delay = (entry.target as HTMLElement).dataset.delay
+              ? parseInt((entry.target as HTMLElement).dataset.delay!)
+              : i * 80;
+            setTimeout(
+              () => entry.target.classList.add("visible"),
+              delay,
+            );
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
     );
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    document.querySelectorAll(".reveal").forEach((el, i) => {
+      (el as HTMLElement).dataset.delay = String(i * 60);
+      observer.observe(el);
+    });
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
-
-        {/* O que fazemos */}
         <Services />
-
-        {/* Novas sections — entre Services e Why */}
         <WhatsAppDemo />
         <Architecture />
         <WebDev />
         <TechStack />
-
-        {/* Por que a JVBSystems */}
         <Why />
-
-        {/* Como trabalhamos */}
         <Process />
-
-        {/* CTA final */}
         <CTA />
       </main>
       <Footer />

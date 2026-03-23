@@ -2,27 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── GOOGLE FONTS ── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ── BASE ── */
+*, *::before, *::after { box-sizing: border-box; }
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --green: #00E5A0;
+  --lime: #C8FF47;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #06080A;
+  color: #F2F5F3;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #06080A; }
+::-webkit-scrollbar-thumb { background: #1E242B; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00E5A0; }
+
+/* ── SELECTION ── */
+::selection { background: rgba(0, 229, 160, 0.18); color: #F2F5F3; }
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── GRID BACKGROUND ── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+}
+
+/* ── PULSE DOT ── */
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 229, 160, 0); }
+}
+.pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+
+/* ── GLOW LINE ── */
+@keyframes glow-line {
+  0% { transform: scaleX(0); transform-origin: left; opacity: 0.6; }
+  60% { transform: scaleX(1); transform-origin: left; opacity: 1; }
+  100% { transform: scaleX(1); transform-origin: left; opacity: 0.6; }
+}
+
+/* ── FLOW ARROW ── */
+@keyframes flowRight {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── FADE UP ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ── FADE IN ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ── BOUNCE (typing indicator) ── */
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+}
+
+/* ── GRADIENT TEXT ── */
+.gradient-text {
+  background: linear-gradient(135deg, #00E5A0 0%, #C8FF47 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── CARD HOVER GLOW ── */
+.card-hover {
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  border-color: rgba(0, 229, 160, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 229, 160, 0.08);
+}
+
+/* ── NOISE OVERLAY ── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ── TAG BADGE ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 229, 160, 0.07);
+  color: #00E5A0;
+  border: 1px solid rgba(0, 229, 160, 0.15);
+  white-space: nowrap;
+}
+
+/* ── NAV LINK ── */
+.nav-link {
+  position: relative;
+  font-size: 14px;
+  color: rgba(242,245,243,0.6);
+  transition: color 0.2s;
+}
+.nav-link:hover { color: #F2F5F3; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: #00E5A0;
+  transition: width 0.2s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ── MOBILE MENU ── */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+#mobile-menu.open { max-height: 320px; }
+
+/* ── STAT BAR ── */
+.stat-bar {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.stat-bar > div {
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.stat-bar > div:last-child { border-right: none; }
