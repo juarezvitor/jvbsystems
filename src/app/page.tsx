@@ -31,61 +31,29 @@ export default function Home() {
 
   return (
     <>
-      {/* Landmark de navegação */}
-      <header role="banner">
-        <Navbar />
-      </header>
-
-      {/* Conteúdo principal — âncora do skip link */}
-      <main id="conteudo-principal" tabIndex={-1}>
-        {/* Hero — seção de introdução */}
+      <Navbar />
+      <main>
         <Hero />
 
-        {/* Serviços — o que oferecemos */}
-        <section aria-labelledby="heading-servicos">
-          <Services />
-        </section>
+        {/* O que fazemos */}
+        <Services />
 
-        {/* Demo do assistente WhatsApp */}
-        <section aria-labelledby="heading-assistente">
-          <WhatsAppDemo />
-        </section>
+        {/* Novas sections — entre Services e Why */}
+        <WhatsAppDemo />
+        <Architecture />
+        <WebDev />
+        <TechStack />
 
-        {/* Arquitetura da plataforma */}
-        <section aria-labelledby="heading-arquitetura">
-          <Architecture />
-        </section>
+        {/* Por que a JVBSystems */}
+        <Why />
 
-        {/* Desenvolvimento Web */}
-        <section aria-labelledby="heading-webdev">
-          <WebDev />
-        </section>
+        {/* Como trabalhamos */}
+        <Process />
 
-        {/* Stack tecnológica */}
-        <section aria-labelledby="heading-stack">
-          <TechStack />
-        </section>
-
-        {/* Diferenciais */}
-        <section aria-labelledby="heading-diferenciais">
-          <Why />
-        </section>
-
-        {/* Metodologia */}
-        <section aria-labelledby="heading-processo">
-          <Process />
-        </section>
-
-        {/* CTA — contato */}
-        <section aria-labelledby="heading-contato">
-          <CTA />
-        </section>
+        {/* CTA final */}
+        <CTA />
       </main>
-
-      {/* Rodapé */}
-      <footer role="contentinfo">
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }
