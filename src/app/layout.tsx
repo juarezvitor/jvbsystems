@@ -5,16 +5,13 @@ import "./globals.css";
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-dm",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
-  axes: ["opsz"],
   display: "swap",
 });
 
@@ -22,7 +19,13 @@ export const metadata: Metadata = {
   title: "JVBSystems — Automações & Desenvolvimento Web",
   description:
     "Desenvolvemos sistemas, automações via WhatsApp e experiências digitais que eliminam trabalho manual, fortalecem sua presença e geram crescimento real.",
-  keywords: ["automação whatsapp", "desenvolvimento web", "sistemas sob medida", "next.js", "JVBSystems"],
+  keywords: [
+    "automação whatsapp",
+    "desenvolvimento web",
+    "sistemas sob medida",
+    "next.js",
+    "JVBSystems",
+  ],
   authors: [{ name: "JVBSystems" }],
   openGraph: {
     title: "JVBSystems — Automações & Desenvolvimento Web",
@@ -36,7 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "JVBSystems — Automações & Desenvolvimento Web",
-    description: "Sistemas, automações e experiências digitais que geram resultado.",
+    description:
+      "Sistemas, automações e experiências digitais que geram resultado.",
   },
   robots: { index: true, follow: true },
 };
