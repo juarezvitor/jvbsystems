@@ -52,12 +52,12 @@ export default function Hero() {
       </div>
 
       {/* Logo grande centralizada */}
-      <div className="relative z-10 mb-6 reveal">
+      <div className="relative z-10 mb-4 reveal">
         <Image
           src="/logo.svg"
           alt="JVBSystems"
-          width={96}
-          height={96}
+          width={180}
+          height={180}
           className="object-contain mx-auto drop-shadow-sm"
           priority
         />
