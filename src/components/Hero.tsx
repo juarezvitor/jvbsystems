@@ -65,7 +65,7 @@ export default function Hero() {
 
       {/* Headline */}
       <h1
-        className="relative z-10 font-display font-extrabold leading-[1.03] tracking-tight mb-6 reveal"
+        className="relative z-10 font-display font-bold leading-[1.03] tracking-tight mb-6 reveal"
         style={{
           color: "var(--text-primary)",
           fontSize: "clamp(44px,8vw,88px)",

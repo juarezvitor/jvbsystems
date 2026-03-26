@@ -47,7 +47,7 @@ export default function CTA() {
           Inicie uma conversa
         </p>
         <h2
-          className="font-display font-extrabold leading-tight mb-5 text-white reveal"
+          className="font-display font-bold leading-tight mb-5 text-white reveal"
           style={{ fontSize: "clamp(32px,5vw,60px)" }}
         >
           Pronto para elevar
