@@ -54,7 +54,7 @@ export default function Hero() {
       {/* Logo grande centralizada */}
       <div className="relative z-10 mb-4 reveal">
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           alt="JVBSystems"
           width={180}
           height={180}

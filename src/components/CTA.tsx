@@ -32,7 +32,7 @@ export default function CTA() {
         {/* Logo branca */}
         <div className="flex justify-center mb-6 reveal">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="JVBSystems"
             width={56}
             height={56}

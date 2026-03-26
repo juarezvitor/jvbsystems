@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="max-w-xs">
             <div className="flex items-center gap-2.5 mb-4">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="JVBSystems"
                 width={34}
                 height={34}

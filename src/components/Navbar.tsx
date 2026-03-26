@@ -49,7 +49,7 @@ export default function Navbar() {
           aria-label="JVBSystems"
         >
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="JVBSystems"
             width={38}
             height={38}
